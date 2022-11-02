@@ -1,0 +1,22 @@
+type Query {
+  test(name: String!): String!
+}
+
+type Mutation {
+  detect(file: Upload!): DetectionResult
+}
+
+scalar Upload
+
+type DetectionResult {
+  detections: [Detection!]!
+}
+
+type Detection {
+  type: DetectionType!
+}
+
+enum DetectionType {
+  MAVIC
+  PHANTOM
+}
